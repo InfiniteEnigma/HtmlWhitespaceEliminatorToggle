@@ -15,3 +15,12 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## 0.0.4
 - Hopefully actually fixed error with command not found
+
+## 0.0.5
+- Fixed Git repository
+
+## 0.0.6
+- Updated regex to capture `(--)$` as well, and the reverse direction
+
+## 0.0.7
+- Updated regex to handle CRLF endings

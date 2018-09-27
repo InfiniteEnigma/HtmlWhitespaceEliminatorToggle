@@ -21,27 +21,16 @@ function activate(context) {
         }
         let textDoc = textEditor.document;
         var curText = textDoc.getText();
-        function textState(testText) {
-            var searchCheck = curText.search(/>(\n\s*)</g);
-            if (searchCheck !== -1) {
-                return 1;
-            }
-            else {
-                return 2;
-            }
-        }
-        var htmlState = textState(curText);
         var newText;
-        if (htmlState === 1) {
-            newText = curText.replace(/>(\n\s*)</g, "$1><");
+        // LINK: https://regex101.com/r/3reqL5/4
+        if (curText.search(/>(\r?\n\s*)</g) !== -1) {
+            newText = curText.replace(/>(\r?\n\s*)</g, "$1><");
         }
         else {
-            newText = curText.replace(/(\n\s*)></g, ">$1<");
+            newText = curText.replace(/(\r?\n\s*)></g, ">$1<");
         }
-        //var r = new RegExp(">(\n\\s*)<", "g");
         const fullRange = new vscode.Range(textDoc.positionAt(0), textDoc.positionAt(curText.length));
         textEditor.edit(edit => edit.replace(fullRange, newText));
-        //https://regex101.com/r/3reqL5/1/
     });
     context.subscriptions.push(disposable);
 }
