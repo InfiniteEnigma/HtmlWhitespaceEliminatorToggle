@@ -24,3 +24,6 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## 0.0.7
 - Updated regex to handle CRLF endings
+
+## 0.0.8
+- Updated README with changes from last patch

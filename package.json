@@ -2,7 +2,7 @@
     "name": "html-whitespace-eliminator-toggle",
     "displayName": "Toggle HMTL Whitespace",
     "description": "Toggles the whitespace of an HTML File",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "publisher": "infiniteenigma",
     "engines": {
         "vscode": "^1.0.0"
